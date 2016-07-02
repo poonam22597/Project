@@ -1,61 +1,26 @@
 <html>
 <head>
-<style>
-div{
-	position:absolute;
-	width:500px; 
-	height:500px;
-}
-img{
-	position:absolute;
-}
-#rightSide{
-	left:500px;
-	border-left: 1px solid black;
-}
-</style>
+<link rel="stylesheet" href="project/stylesheets/mystyle.css">
 </head>
-<body onload="generateFaces()">
-	<h1>Matching Game</h1>
-	<p>Click on the extra smiling face on the left.</p>
-	<div id="leftSide"></div>
-	<div id="rightSide"></div>
-	<script>
-	var theLeftSide = document.getElementById("leftSide");
-	var i;
-	var	noOfFaces=5;
-	var theRightSide=document.getElementById("rightSide");
-	var theBody =document.getElementsByTagName("body")[0];
-	function generateFaces(){
-		for(i=0 ; i<noOfFaces ; i++){
-			theImg = document.createElement("img");
-			theImg.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
-			theImg.style.top = Math.floor(Math.random()* 400) + 1;
-			theImg.style.left = Math.floor(Math.random()* 400) + 1;
-			theLeftSide.appendChild(theImg);
-		}
-		var leftSideImages = theLeftSide.cloneNode(true);
-		leftSideImages.removeChild(leftSideImages.lastChild);
-		theRightSide.appendChild(leftSideImages);
-		
-		theLeftSide.lastChild.onclick = function nextLevel(event){
-		event.stopPropagation();
-        noOfFaces += 5;
-		while(theLeftSide.firstChild){
-			theLeftSide.removeChild(theLeftSide.firstChild);
-		}
-		while(theRightSide.firstChild){
-			theRightSide.removeChild(theRightSide.firstChild);
-		}
-        generateFaces();
-		};
-	}
-	theBody.onclick = function gameOver() {
-    alert("Game Over!");
-    theBody.onclick = null;
-    theLeftSide.lastChild.onclick = null;
-	}; 
-	
-</script>
+<body>
+	<h1><center>Our Menu</center></h1><br>
+	<div id="left">
+		<span>Chicken</span>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nibh ac vestibulum consequat. Vestibulum bibendum venenatis mi a bibendum. Phasellus massa sapien, vulputate a viverra faucibus, pulvinar vitae tellus. Nunc hendrerit finibus tortor nec efficitur. Sed ultrices nisl nec maximus convallis. Quisque pellentesque orci ac tortor pulvinar vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec commodo lobortis est, at ultrices lacus tempus efficitur. Fusce venenatis, nisl a scelerisque lobortis, urna quam accumsan diam, at gravida mauris turpis ac neque. Donec rhoncus aliquam arcu et feugiat. Sed arcu magna, auctor volutpat pharetra id, euismod id purus. Sed dictum sit amet eros nec finibus. Nulla ligula erat, luctus at volutpat vel, scelerisque nec odio. Morbi id lobortis lorem.
+		</p>
+	</div>
+	<div id="mid">
+		<span>Beef</span>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nibh ac vestibulum consequat. Vestibulum bibendum venenatis mi a bibendum. Phasellus massa sapien, vulputate a viverra faucibus, pulvinar vitae tellus. Nunc hendrerit finibus tortor nec efficitur. Sed ultrices nisl nec maximus convallis. Quisque pellentesque orci ac tortor pulvinar vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec commodo lobortis est, at ultrices lacus tempus efficitur. Fusce venenatis, nisl a scelerisque lobortis, urna quam accumsan diam, at gravida mauris turpis ac neque. Donec rhoncus aliquam arcu et feugiat. Sed arcu magna, auctor volutpat pharetra id, euismod id purus. Sed dictum sit amet eros nec finibus. Nulla ligula erat, luctus at volutpat vel, scelerisque nec odio. Morbi id lobortis lorem.
+		</p>
+	</div>
+	<div id="right">
+		<span>Sushi</span>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nibh ac vestibulum consequat. Vestibulum bibendum venenatis mi a bibendum. Phasellus massa sapien, vulputate a viverra faucibus, pulvinar vitae tellus. Nunc hendrerit finibus tortor nec efficitur. Sed ultrices nisl nec maximus convallis. Quisque pellentesque orci ac tortor pulvinar vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec commodo lobortis est, at ultrices lacus tempus efficitur. Fusce venenatis, nisl a scelerisque lobortis, urna quam accumsan diam, at gravida mauris turpis ac neque. Donec rhoncus aliquam arcu et feugiat. Sed arcu magna, auctor volutpat pharetra id, euismod id purus. Sed dictum sit amet eros nec finibus. Nulla ligula erat, luctus at volutpat vel, scelerisque nec odio. Morbi id lobortis lorem.
+		</p>
+	</div>
 </body>
 </html>
